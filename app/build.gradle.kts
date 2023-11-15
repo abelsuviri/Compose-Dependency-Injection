@@ -2,8 +2,6 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
-    id(libs.plugins.kapt.get().pluginId)
-    alias(libs.plugins.hilt)
 }
 
 android {
@@ -60,15 +58,7 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.material)
 
-    implementation(libs.hilt)
-    implementation(libs.hilt.viewmodel)
-    kapt(libs.hilt.compiler)
-}
-
-kapt {
-    correctErrorTypes = true
-}
-
-hilt {
-    enableAggregatingTask = true
+    implementation(libs.koin.core)
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
 }
